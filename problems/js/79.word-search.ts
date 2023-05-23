@@ -9,7 +9,7 @@ function exist(board: string[][], word: string): boolean {
   let m = board.length; //row
   let n = board[0].length; //col
 
-  let dfs = function (i, j, len) {
+  let dfs: any = function (i: any, j: any, len: any) {
     if (len == word.length) return true;
     if (i < 0 || i >= m || j < 0 || j >= n || board[i][j] != word[len])
       return false;
@@ -33,7 +33,7 @@ function exist(board: string[][], word: string): boolean {
   return false;
 }
 
-let board = [
+let board: any = [
     ["A", "B", "C", "E"],
     ["S", "F", "C", "S"],
     ["A", "D", "E", "E"],
@@ -42,4 +42,5 @@ let board = [
 
 const ans = exist(board, word);
 
+console.log(ans);
 // @lc code=end
