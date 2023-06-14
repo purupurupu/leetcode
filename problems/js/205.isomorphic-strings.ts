@@ -28,16 +28,37 @@
 // }
 
 // faster
+// function isIsomorphic(s: string, t: string): boolean {
+//   if (s.length !== t.length) return false;
+
+//   for (let i = 0; i < s.length; i++) {
+//     if (s.indexOf(s[i]) !== t.indexOf(t[i])) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+//simply faster
 function isIsomorphic(s: string, t: string): boolean {
-  if (s.length !== t.length) return false;
+  const sMap = new Map<string, string>();
+  const tMap = new Map<string, string>();
 
   for (let i = 0; i < s.length; i++) {
-    if (s.indexOf(s[i]) !== t.indexOf(t[i])) {
+    const charS = s[i];
+    const charT = t[i];
+
+    if (!sMap.has(charS) && !tMap.has(charT)) {
+      sMap.set(charS, charT);
+      tMap.set(charT, charS);
+    } else if (sMap.get(charS) !== charT || tMap.get(charT) !== charS) {
       return false;
     }
   }
+
   return true;
 }
+
 let s = "egg",
   t = "add";
 console.log(isIsomorphic(s, t));
