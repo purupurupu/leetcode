@@ -6,19 +6,19 @@
 
 // @lc code=start
 function maxProfit(prices: number[]): number {
-  let left = 0;
-  let right = prices.length - 1;
-  let profit = 0;
+  let left = 0
+  let right = prices.length - 1
+  let profit = 0
   while (left < right) {
     if (prices[left] < prices[left + 1]) {
-      profit += prices[left + 1] - prices[left];
+      profit += prices[left + 1] - prices[left]
     }
-    left++;
+    left++
   }
-  return profit;
+  return profit
 }
 
-let prices = [7, 1, 5, 3, 6, 4];
-console.log(maxProfit(prices));
+let prices = [7, 1, 5, 3, 6, 4]
+console.log(maxProfit(prices))
 
 // @lc code=end

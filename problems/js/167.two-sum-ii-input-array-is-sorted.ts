@@ -22,26 +22,26 @@
 
 // two pointers solution
 function twoSum(numbers: number[], target: number): number[] {
-  let res: number[] = [];
-  let left = 0;
-  let right = numbers.length - 1;
+  let res: number[] = []
+  let left = 0
+  let right = numbers.length - 1
   while (left < right) {
-    let sum = numbers[left] + numbers[right];
+    let sum = numbers[left] + numbers[right]
     if (sum === target) {
-      res.push(left + 1);
-      res.push(right + 1);
-      break;
+      res.push(left + 1)
+      res.push(right + 1)
+      break
     } else if (sum < target) {
-      left++;
+      left++
     } else {
-      right--;
+      right--
     }
   }
-  return res;
+  return res
 }
 
-let numbers = [2, 7, 11, 15];
-let target = 9;
-console.log(twoSum(numbers, target));
+let numbers = [2, 7, 11, 15]
+let target = 9
+console.log(twoSum(numbers, target))
 
 // @lc code=end

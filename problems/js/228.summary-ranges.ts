@@ -22,21 +22,21 @@
 
 // faster case
 function summaryRanges(nums: number[]): string[] {
-  let res: string[] = [];
-  let start = nums[0];
+  let res: string[] = []
+  let start = nums[0]
 
   for (let i = 1; i <= nums.length; i++) {
-    if (nums[i] - nums[i - 1] === 1) continue;
+    if (nums[i] - nums[i - 1] === 1) continue
 
-    res.push(start === nums[i - 1] ? `${start}` : `${start}->${nums[i - 1]}`);
-    start = nums[i];
+    res.push(start === nums[i - 1] ? `${start}` : `${start}->${nums[i - 1]}`)
+    start = nums[i]
   }
-  return res;
+  return res
 }
 
-let nums = [0, 1, 2, 4, 5, 7];
-nums = [0, 2, 3, 4, 6, 8, 9];
-const out = summaryRanges(nums);
-console.log(out);
+let nums = [0, 1, 2, 4, 5, 7]
+nums = [0, 2, 3, 4, 6, 8, 9]
+const out = summaryRanges(nums)
+console.log(out)
 
 // @lc code=end

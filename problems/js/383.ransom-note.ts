@@ -6,29 +6,29 @@
 
 // @lc code=start
 function canConstruct(ransomNote: string, magazine: string): boolean {
-  let stack: string[] = [];
+  let stack: string[] = []
   for (let i = 0; i < ransomNote.length; i++) {
-    stack.push(ransomNote[i]);
+    stack.push(ransomNote[i])
   }
 
   for (let i = 0; i < magazine.length; i++) {
-    let isInclude: boolean = stack.includes(magazine[i]);
+    let isInclude: boolean = stack.includes(magazine[i])
 
     if (isInclude) {
-      stack.splice(stack.indexOf(magazine[i]), 1);
+      stack.splice(stack.indexOf(magazine[i]), 1)
     }
     if (stack.length === 0) {
-      return true;
+      return true
     }
   }
 
-  return false;
+  return false
 }
 
-let ransomNote = "aaa",
-  magazine = "baa";
+let ransomNote = 'aaa',
+  magazine = 'baa'
 
-const res = canConstruct(ransomNote, magazine);
-console.log(res);
+const res = canConstruct(ransomNote, magazine)
+console.log(res)
 
 // @lc code=end

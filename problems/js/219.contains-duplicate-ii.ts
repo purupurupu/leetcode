@@ -19,22 +19,22 @@
 
 // hash table
 function containsNearbyDuplicate(nums: number[], k: number): boolean {
-  const map = new Map();
+  const map = new Map()
   for (let i = 0; i < nums.length; i++) {
     if (map.has(nums[i]) && Math.abs(map.get(nums[i]) - i) <= k) {
-      return true;
+      return true
     }
-    map.set(nums[i], i);
+    map.set(nums[i], i)
   }
-  return false;
+  return false
 }
 
-let nums = [1, 2, 3, 1];
+let nums = [1, 2, 3, 1]
 // let nums = [1, 2, 3, 1, 2, 3];
-let k = 3;
+let k = 3
 // let k = 2;
 
-const out = containsNearbyDuplicate(nums, k);
-console.log(out);
+const out = containsNearbyDuplicate(nums, k)
+console.log(out)
 
 // @lc code=end

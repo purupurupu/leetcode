@@ -1,41 +1,41 @@
 function spiralOrder(matrix: number[][]): number[] {
-  let arr: number[] = [];
-  let r: number = matrix.length;
-  let c: number = matrix[0].length;
-  let direction: number = 0;
-  let left: number = 0;
-  let right: number = c - 1;
-  let bottom: number = 0;
-  let top: number = r - 1;
+  let arr: number[] = []
+  let r: number = matrix.length
+  let c: number = matrix[0].length
+  let direction: number = 0
+  let left: number = 0
+  let right: number = c - 1
+  let bottom: number = 0
+  let top: number = r - 1
 
   while (arr.length < r * c) {
     if (direction == 0) {
       for (let i = left; i <= right; i++) {
-        arr.push(matrix[bottom][i]);
+        arr.push(matrix[bottom][i])
       }
-      bottom++;
-      direction++;
+      bottom++
+      direction++
     } else if (direction == 1) {
       for (let i = bottom; i <= top; i++) {
-        arr.push(matrix[i][right]);
+        arr.push(matrix[i][right])
       }
-      right--;
-      direction++;
+      right--
+      direction++
     } else if (direction == 2) {
       for (let i = right; i >= left; i--) {
-        arr.push(matrix[top][i]);
+        arr.push(matrix[top][i])
       }
-      top--;
-      direction++;
+      top--
+      direction++
     } else if (direction == 3) {
       for (let i = top; i >= bottom; i--) {
-        arr.push(matrix[i][left]);
+        arr.push(matrix[i][left])
       }
-      left++;
-      direction++;
+      left++
+      direction++
     }
-    if (direction == 4) direction = 0;
+    if (direction == 4) direction = 0
   }
 
-  return arr;
+  return arr
 }

@@ -6,31 +6,31 @@
 
 // @lc code=start
 function simplifyPath(path: string): string {
-  let res = "";
-  let arr = path.split("/");
+  let res = ''
+  let arr = path.split('/')
 
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === "" || arr[i] === ".") {
-      continue;
-    } else if (arr[i] === "..") {
+    if (arr[i] === '' || arr[i] === '.') {
+      continue
+    } else if (arr[i] === '..') {
       // remove last /
-      res = res.slice(0, res.lastIndexOf("/"));
+      res = res.slice(0, res.lastIndexOf('/'))
     } else {
-      res += "/" + arr[i];
+      res += '/' + arr[i]
     }
   }
 
-  if (res === "") {
-    res = "/";
+  if (res === '') {
+    res = '/'
   }
 
-  return res;
+  return res
 }
 
-let path = "/home/";
-path = "/../";
-path = "/home//foo/";
+let path = '/home/'
+path = '/../'
+path = '/home//foo/'
 
-console.log(simplifyPath(path));
+console.log(simplifyPath(path))
 
 // @lc code=end
