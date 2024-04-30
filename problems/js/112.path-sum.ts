@@ -31,6 +31,24 @@ class TreeNode {
 }
 
 function hasPathSum(root: TreeNode | null, targetSum: number): boolean {
-  return true
+  if (root == null) {
+    return false
+  }
+
+  let tree = new TreeNode(root?.val, root?.left, root?.right)
+
+  if (tree.left === null && tree.right === null) {
+    return tree.val === targetSum
+  }
+
+  if (tree.left !== null && hasPathSum(tree.left, targetSum - tree.val)) {
+    return true
+  }
+
+  if (tree.right !== null && hasPathSum(tree.right, targetSum - tree.val)) {
+    return true
+  }
+
+  return false
 }
 // @lc code=end
